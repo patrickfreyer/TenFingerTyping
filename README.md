@@ -19,9 +19,35 @@ A macOS menu bar app for learning proper touch typing technique with AI-powered 
 
 ## Installation
 
-1. Clone the repository
-2. Open `TenFingerTyping.xcodeproj` in Xcode
-3. Build and run (Cmd + R)
+### Prerequisites
+- macOS 13.0 (Ventura) or later
+- Xcode 15.0 or later (download from [Mac App Store](https://apps.apple.com/app/xcode/id497799835))
+
+### Steps
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/patrickfreyer/TenFingerTyping.git
+   cd TenFingerTyping
+   ```
+
+2. **Open in Xcode**
+   ```bash
+   open TenFingerTyping.xcodeproj
+   ```
+
+3. **Build and run**
+   - Press `Cmd + R` in Xcode, or
+   - From command line:
+     ```bash
+     xcodebuild -scheme TenFingerTyping -destination 'platform=macOS' build
+     ```
+
+4. **Grant permissions**
+   - The app may request accessibility permissions to capture keystrokes
+   - Go to System Settings → Privacy & Security → Accessibility if prompted
+
+The app will appear as a keyboard icon in your menu bar.
 
 ## Configuration
 

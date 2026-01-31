@@ -7,8 +7,8 @@ struct TypingPromptView: View {
 
     var body: some View {
         VStack(spacing: 12) {
-            // Target text with character coloring
-            HStack(spacing: 0) {
+            // Target text with character coloring - using wrapping flow layout
+            FlowLayout(spacing: 0) {
                 ForEach(Array(attributedText.enumerated()), id: \.offset) { index, item in
                     Text(String(item.character))
                         .font(.system(size: 20, weight: .medium, design: .monospaced))

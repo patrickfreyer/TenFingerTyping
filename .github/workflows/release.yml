@@ -24,15 +24,19 @@ jobs:
             -destination 'platform=macOS' \
             build
 
-      - name: Create ZIP archive
+      - name: Create DMG installer
         run: |
           cd build/Build/Products/Release
-          zip -r TenFingerTyping-${{ github.ref_name }}-macOS.zip TenFingerTyping.app
+          mkdir -p dmg_contents
+          cp -R TenFingerTyping.app dmg_contents/
+          ln -sf /Applications dmg_contents/Applications
+          hdiutil create -volname "Ten Finger Typing" -srcfolder dmg_contents -ov -format UDZO TenFingerTyping-${{ github.ref_name }}-macOS.dmg
+          rm -rf dmg_contents
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          files: build/Build/Products/Release/TenFingerTyping-${{ github.ref_name }}-macOS.zip
+          files: build/Build/Products/Release/TenFingerTyping-${{ github.ref_name }}-macOS.dmg
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

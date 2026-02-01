@@ -2,6 +2,10 @@
 
 A macOS menu bar app for learning proper touch typing technique with AI-powered exercises.
 
+<p align="center">
+  <img src="screenshot.png" alt="Ten Finger Typing Screenshot" width="500">
+</p>
+
 ## Features
 
 - **Menu Bar Integration** - Lives in your menu bar for quick access anytime
